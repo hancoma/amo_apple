@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Check Internet</title>
+        <style>
+            * { margin: 0; padding: 0; font-family: 'Apple SD Gothic Neo', arial, sans-serif; text-align: center; box-sizing: border-box }
+            html, body, main { height: 100% }
+            .main-inner { position: absolute; display: flex; top: 50%; width: 100%; justify-content: center; align-items: center; flex-direction: column; transform: translateY(-50%) } /* flex layout 미지원 시 절대 위치 지정 */
+            .title { margin: 10px; font-weight: normal; font-size: 26px }
+            .description { margin-bottom: 20px; font-size: 16px }
+            .link { font-size: 16px; text-decoration: none }
+            .icon-stroke { fill: #232323 }
+            .line-break { display: block }
+        </style>
+    </head>
+    <body>
+        <main role="main">
+            <div class="main-inner">
+                <svg viewBox="0 0 130 130" width="60px" height="60px" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path d="M65.64,9c30.88,0,56,25.12,56,56s-25.12,56-56,56s-56-25.12-56-56S34.76,9,65.64,9 M65.64,2 c-34.79,0-63,28.21-63,63s28.21,63,63,63s63-28.21,63-63S100.43,2,65.64,2L65.64,2z" class="icon-stroke"/>
+                    </g>
+                    <g>
+                        <circle cx="40.06" cy="51.73" r="6.77" class="icon-stroke"/>
+                        <circle cx="91.23" cy="51.73" r="6.77" class="icon-stroke"/>
+                    </g>
+                    <path d="M86.37,91.08H44.92c-2.01,0-3.63-1.63-3.63-3.63v0c0-2.01,1.63-3.63,3.63-3.63h41.45 c2.01,0,3.63,1.63,3.63,3.63v0C90,89.45,88.37,91.08,86.37,91.08z" class="icon-stroke"/>
+                </svg>
+                <h1 class="title">Check your internet <span class="line-break">connection and try again</span></h1>
+                <p class="description">We couldn't connect to the server.</p>
+                <a href="#" class="link" onclick="gopage('index.html')">Refresh the page</a>
+            </div>
+        </main>
+    </body>
+</html>
+
+<script>
+    function gopage (page) {
+    var page=page;
+    location.href=page;
+}
+</script>

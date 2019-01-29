@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "528703994079",
+    "firebase_url": "https://cloudbric-c6ec7.firebaseio.com",
+    "project_id": "cloudbric-c6ec7",
+    "storage_bucket": "cloudbric-c6ec7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528703994079:android:9b9a45d3e63f3aff",
+        "android_client_info": {
+          "package_name": "com.cloudbric.console"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528703994079-i50q55l92d55ck66q95mo99f7fs4sdbm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyKfGTCQXUgORqtr2de_pw6xatnf7EDSQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
