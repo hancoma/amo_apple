@@ -31,6 +31,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function() {
+         start_web();
         receivedEvent('deviceready');
    
     }
@@ -56,7 +57,7 @@ var app = {
 document.addEventListener("backbutton", exit_show, false); 
          var reg_id=device.uuid;
        // 기기 번호 검출 
-           start_web();
+       
           console.log('Received Event: ' + reg_id);
 
           push = PushNotification.init({
