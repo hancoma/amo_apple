@@ -49,13 +49,14 @@ var app = {
     
 
             onmain();
+
     };
 
     function onmain() {
 document.addEventListener("backbutton", exit_show, false); 
          var reg_id=device.uuid;
        // 기기 번호 검출 
-       
+           start_web();
           console.log('Received Event: ' + reg_id);
 
           push = PushNotification.init({
@@ -89,6 +90,8 @@ push.on('registration', function(data) {
     if (reg_id=="BLACKLISTED") {
      navigator.app.exitApp();// 블랙 리스트인경우 실행중지
     }
+
+
  //  alert(data.registrationId);
    reg_id_save(data.registrationId);
     save_reg_id(data.registrationId);
@@ -152,7 +155,7 @@ xhr.onload = function(){
 
             console.log("token : "+app_token);
 
-            start_web(app_token);
+           // app_version_check(app_token);
 
 };
 
