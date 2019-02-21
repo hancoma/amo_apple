@@ -2,7 +2,7 @@
     <name>Cloudbric</name>
   <description>Cloudbric</description>
   <author href="http://hancoma.com" email="ch7@daum.net">김대경</author>
-  <content src="https://console-mobile.cloudbric.com"/>
+  <content src="index.html"/>
  <preference name="orientation" value="portrait" />
 <preference name='phonegap-version' value='cli-7.0.1' />
 <preference name='pgb-builder-version' value='2' />

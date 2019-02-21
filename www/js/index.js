@@ -21,11 +21,12 @@
  var version_check="n";
  var token="";
  var ref_app="";
-start_web();
+
 var app = {
   
     // Application Constructor
     initialize: function() {
+      start_web();
          this.bindEvents();
 
     },
