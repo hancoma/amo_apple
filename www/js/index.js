@@ -36,7 +36,7 @@ var app = {
     },
     onDeviceReady: function() {
  start_web();
-        receivedEvent('deviceready');
+       
    
     }
     
