@@ -26,7 +26,7 @@ var app = {
   
     // Application Constructor
     initialize: function() {
-      start_web();
+      
          this.bindEvents();
 
     },
@@ -34,7 +34,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function() {
-
+start_web();
         receivedEvent('deviceready');
    
     }
