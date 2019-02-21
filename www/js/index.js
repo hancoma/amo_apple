@@ -26,15 +26,16 @@ var app = {
   
     // Application Constructor
     initialize: function() {
-      
+
          this.bindEvents();
 
     },
     bindEvents: function() {
+      start_web();
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function() {
-start_web();
+
         receivedEvent('deviceready');
    
     }
