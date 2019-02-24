@@ -55,7 +55,10 @@
     <param name="SENDER_ID" value="1:528703994079:android:9b9a45d3e63f3aff" />
 </plugin>
 <plugin name="cordova-plugin-actionsheet" />
-
+<preference name="StatusBarOverlaysWebView" value="false" />
+<preference name="StatusBarBackgroundColor" value="#000000" />
+<preference name="StatusBarStyle" value="lightcontent" />
+<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git" source="git" />
 
     
   <icon src="www/icon.png"/>
