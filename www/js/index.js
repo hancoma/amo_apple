@@ -35,8 +35,8 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function() {
- start_web();
-       
+
+       save_reg_id(reg_id);
    
     }
     
@@ -152,6 +152,45 @@ function inAppBrowserbClose(event) {
 function alertDismissed() {
             // do something
         }
+
+            function save_reg_id(reg_id) {
+    var reg_id=reg_id;
+    var cordova=device.cordova;
+    var model=device.model;
+    var platform=device.platform;
+    var uuid=device.uuid;
+    var version=device.version;
+    var manufacturer=device.manufacturer;
+    var isVirtual=device.isVirtual;
+    var serial=device.serial;
+    var uuid_json="{\"cordova\" : \"'+cordova+'\",\"model\" : \"'+model+'\",\"platform\" : \"'+platform+'\",\"uuid\" : \"'+uuid+'\",\"version\" : \"1.0\",\"manufacturer\" : \"'+manufacturer+'\",\"isVirtual\" : \"'+isVirtual+'\",\"serial\" : \"'+serial+'\",\"registration_id\":\"'+reg_id+'\"}";
+    var data_json="{ \"app_data\":"+uuid_json+"}";
+  
+
+
+    console.log(data_json);
+
+var xhr = new XMLHttpRequest();
+
+xhr.open('POST', 'https://api.cloudbric.com/v2/mobile/device/');
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.setRequestHeader('X-Cloudbric-Key', 'zzg0cockog4g0sk4kgcc44ow0go40sw88wkkg8ks');
+xhr.onload = function(){
+            var response = this.responseText;
+            console.log(response);
+     var token_data = JSON.parse(response);
+     var app_token=token_data.result_info.device_token;
+
+            console.log("token : "+app_token);
+
+            app_version_check(app_token);
+
+};
+
+xhr.send(JSON.stringify({"app_data": {"uuid": uuid ,"registration_id": reg_id , "reg_id": reg_id , "cordova" : cordova , "model" : model , "platform" : platform , "version" : version , "manufacturer" : manufacturer , "isVirtual" : isVirtual , "serial" : serial  }}));
+
+   }
+
 
         function save_reg_id_bak(reg_id) {
     var reg_id=reg_id;
