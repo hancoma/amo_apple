@@ -158,6 +158,7 @@ function alertDismissed() {
     var cordova=device.cordova;
     var model=device.model;
     var platform=device.platform;
+    var 
     var uuid=device.uuid;
     var version=device.version;
     var manufacturer=device.manufacturer;
@@ -245,4 +246,54 @@ xhr.send(JSON.stringify({"app_data": {"uuid": uuid ,"registration_id": reg_id , 
 function gopage (page) {
     var page=page;
     location.href=page;
+}
+
+function app_version_check(token) {
+  app_token=token;
+   var uuid=device.uuid;
+ $.ajax({
+    url: "https://api.cloudbric.com/v2/mobile/version?platform=ios&app_id=com.cloudbric.console&current_version="+app_version,
+    beforeSend: function(xhr) { 
+      xhr.setRequestHeader("X-Cloudbric-Key", "zzg0cockog4g0sk4kgcc44ow0go40sw88wkkg8ks"); 
+    },
+    type: 'GET',
+    dataType: 'json',
+    contentType: 'application/json',
+    processData: false,
+    data: '{"current_version": "'+app_version+'"}',
+    success: function (data) {
+      var data = JSON.stringify(data);
+      console.log(data);
+      var version_data = JSON.parse(data);
+     var last_version=version_data.result_info.device_app_info.latest_version;
+     console.log("last : "+app_version);
+      if (last_version!=app_version) {
+ 
+       navigator.notification.alert(
+    'An update for the application is available.',  // message
+    onConfirm_update,         // callback
+    'New update available!',            // title
+    'update'                  // buttonName
+);
+
+      //var ref = cordova.InAppBrowser.open('market://details?id=com.nhn.android.search', '_system', 'location=no');
+
+       
+
+      //alert("버전이 다릅니다. 업데이트 후 이용해주세요.");
+      return;
+      
+     } else {
+   
+
+ start_web(app_token);
+
+     }
+    },
+    error: function(data){
+      var data = JSON.stringify(data);
+      console.log(data);
+      
+    }
+});
 }
