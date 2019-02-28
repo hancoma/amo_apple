@@ -36,7 +36,7 @@ var app = {
     },
     onDeviceReady: function() {
 
-       save_reg_id(reg_id);
+       receivedEvent('deviceready');
    
     }
     
