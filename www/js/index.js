@@ -62,7 +62,7 @@ document.addEventListener("offline", function(){
 
    }, false);    
  
-      alt_msg("정상접속");      
+      alert_msg("정상접속");      
       //onmain();
     };
 
