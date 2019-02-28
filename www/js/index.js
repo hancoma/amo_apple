@@ -59,7 +59,7 @@ document.addEventListener("offline", function(){
    mode="error";
   
    gopage("error.html");
-   ref.close();
+   //ref.close();
 
    }, false);    
  
@@ -321,4 +321,9 @@ function app_version_check(token) {
       
     }
 });
+}
+
+function gopage (page) {
+    var page=page;
+    location.href=page;
 }
