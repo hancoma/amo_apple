@@ -628,7 +628,8 @@ module.exports.metadata =
     "cordova-plugin-vibration": "2.1.6",
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-actionsheet": "2.3.3",
-    "cordova-plugin-contacts": "2.0.1"
+    "cordova-plugin-contacts": "2.0.1",
+    "cordova-plugin-wkwebview-engine": "1.1.4"
 }
 // BOTTOM OF METADATA
 });
