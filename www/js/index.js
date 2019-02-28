@@ -42,6 +42,30 @@ var app = {
     
   }
 
+
+  function receivedEvent(id) {
+     var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
+document.addEventListener("offline", function(){  
+   navigator.notification.confirm(" Connect and try again. ", onConfirm, "No Internet", "EXIT"); 
+   navigator.notification.activityStop();
+   mode="error";
+  
+   gopage("error.html");
+   ref.close();
+
+   }, false);    
+ 
+      alt_msg("정상접속");      
+      //onmain();
+    };
+
   
 
 function start_web(token) {
