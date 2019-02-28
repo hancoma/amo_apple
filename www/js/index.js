@@ -53,8 +53,9 @@ var app = {
 
         console.log('Received Event: ' + id);
 document.addEventListener("offline", function(){  
-   navigator.notification.confirm(" Connect and try again. ", onConfirm, "No Internet", "EXIT"); 
-   navigator.notification.activityStop();
+  // navigator.notification.confirm(" Connect and try again. ", onConfirm, "No Internet", "EXIT"); 
+  // navigator.notification.activityStop();
+     alert_msg("접속오류");      
    mode="error";
   
    gopage("error.html");
