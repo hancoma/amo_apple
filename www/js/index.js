@@ -55,15 +55,15 @@ var app = {
 document.addEventListener("offline", function(){  
   // navigator.notification.confirm(" Connect and try again. ", onConfirm, "No Internet", "EXIT"); 
   // navigator.notification.activityStop();
-     alert_msg("접속오류");      
-   mode="error";
+     alert("접속오류");      
+ //  mode="error";
   
-   gopage("error.html");
+   //gopage("error.html");
    //ref.close();
 
    }, false);    
  
-      alert_msg("정상접속");      
+      alert("정상접속");      
       //onmain();
     };
 
