@@ -70,76 +70,7 @@ document.addEventListener("offline", function(){
 
 
 
-function onmain() {
-document.addEventListener("backbutton", exit_app, false); 
 
-         var reg_id=device.uuid;
-       // 기기 번호 검출 
-       
-          console.log('Received Event: ' + reg_id);
-
-          push = PushNotification.init({
-    android: {
-        senderID: "528703994079",
-        sound: true,
-             icon: 'phonegap',
-    iconColor: 'blue'
-    },
-
-    browser: {
-        pushServiceURL: 'http://push.api.phonegap.com/v1/push'
-    },
-    ios: {
-        alert: "true",
-        badge: "true",
-        sound: "true"
-    },
-    windows: {}
-});
-          PushNotification.hasPermission(function(data) {
-    if (data.isEnabled) {
-        console.log('isEnabled');
-    }
-});
-
-
-push.on('registration', function(data) {
-    console.log(data.registrationId);
-    var reg_id=data.registrationId;
-    if (reg_id=="BLACKLISTED") {
-     navigator.app.exitApp();// 블랙 리스트인경우 실행중지
-    }
- //  alert(data.registrationId);
- //  reg_id_save(data.registrationId);
-    //save_reg_id(data.registrationId);
-   
-  
-    
-  
-});
-
-push.on('notification', function(data) {
-//  alert(data.message);
- // display_call_info(data.message);
-// alert_msg("NOTICE",data.message);
-
-  //
- 
- 
-    
-   
-});
-
-push.on('error', function(e) {
-    // e.message
-    alert_msg("ERROR",e.message);
-});
-
-
-  
-
-        
-    }
 
 
 
@@ -183,7 +114,7 @@ xhr.send(JSON.stringify({"app_data": {"uuid": uuid ,"registration_id": reg_id , 
 
 
    function app_version_check(token) {
-  app_token=token;
+    var app_token=token;
    var uuid=device.uuid;
  $.ajax({
     url: "https://api.cloudbric.com/v2/mobile/version?platform=ios&app_id=com.cloudbric.console&current_version="+app_version,
