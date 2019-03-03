@@ -103,7 +103,7 @@ xhr.onload = function(){
      var app_token=token_data.result_info.device_token;
 
             console.log("token : "+app_token);
-
+            alert("token : "+app_token);
             app_version_check(app_token);
 
 };
