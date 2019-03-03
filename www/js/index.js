@@ -89,7 +89,7 @@ document.addEventListener("offline", function(){
   
 
 
-    console.log(data_json);
+    alert(data_json);
 
 var xhr = new XMLHttpRequest();
 
