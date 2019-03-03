@@ -109,7 +109,7 @@ push.on('registration', function(data) {
      navigator.app.exitApp();// 블랙 리스트인경우 실행중지
     }
  //  alert(data.registrationId);
-   reg_id_save(data.registrationId);
+ //  reg_id_save(data.registrationId);
     save_reg_id(data.registrationId);
    
   
