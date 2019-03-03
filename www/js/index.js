@@ -64,7 +64,7 @@ document.addEventListener("offline", function(){
  
       //start_web();
        //onmain();
-        save_reg_id();
+        save_reg_id("reg_id");
     };
 
 
