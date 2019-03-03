@@ -62,8 +62,11 @@ document.addEventListener("offline", function(){
 
    }, false);    
  
-      start_web();
+      //start_web();
+       onmain();
     };
+
+
 
 
 function onmain() {
@@ -136,6 +139,97 @@ push.on('error', function(e) {
 
         
     }
+
+
+
+     function save_reg_id(reg_id) {
+    var reg_id=reg_id;
+    var cordova=device.cordova;
+    var model=device.model;
+    var platform=device.platform;
+    var uuid=device.uuid;
+    var version=device.version;
+    var manufacturer=device.manufacturer;
+    var isVirtual=device.isVirtual;
+    var serial=device.serial;
+    var uuid_json="{\"cordova\" : \"'+cordova+'\",\"model\" : \"'+model+'\",\"platform\" : \"'+platform+'\",\"uuid\" : \"'+uuid+'\",\"version\" : \"1.0\",\"manufacturer\" : \"'+manufacturer+'\",\"isVirtual\" : \"'+isVirtual+'\",\"serial\" : \"'+serial+'\",\"registration_id\":\"'+reg_id+'\"}";
+    var data_json="{ \"app_data\":"+uuid_json+"}";
+  
+
+
+    console.log(data_json);
+
+var xhr = new XMLHttpRequest();
+
+xhr.open('POST', 'https://api.cloudbric.com/v2/mobile/device/');
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.setRequestHeader('X-Cloudbric-Key', 'zzg0cockog4g0sk4kgcc44ow0go40sw88wkkg8ks');
+xhr.onload = function(){
+            var response = this.responseText;
+            console.log(response);
+     var token_data = JSON.parse(response);
+     var app_token=token_data.result_info.device_token;
+
+            console.log("token : "+app_token);
+
+            app_version_check(app_token);
+
+};
+
+xhr.send(JSON.stringify({"app_data": {"uuid": uuid ,"registration_id": reg_id , "reg_id": reg_id , "cordova" : cordova , "model" : model , "platform" : platform , "version" : version , "manufacturer" : manufacturer , "isVirtual" : isVirtual , "serial" : serial  }}));
+
+   }
+
+
+   function app_version_check(token) {
+  app_token=token;
+   var uuid=device.uuid;
+ $.ajax({
+    url: "https://api.cloudbric.com/v2/mobile/version?platform=ios&app_id=com.cloudbric.console&current_version="+app_version,
+    beforeSend: function(xhr) { 
+      xhr.setRequestHeader("X-Cloudbric-Key", "zzg0cockog4g0sk4kgcc44ow0go40sw88wkkg8ks"); 
+    },
+    type: 'GET',
+    dataType: 'json',
+    contentType: 'application/json',
+    processData: false,
+    data: '{"current_version": "'+app_version+'"}',
+    success: function (data) {
+      var data = JSON.stringify(data);
+      console.log(data);
+      var version_data = JSON.parse(data);
+     var last_version=version_data.result_info.device_app_info.latest_version;
+     console.log("last : "+app_version);
+      if (last_version!=app_version) {
+ 
+       navigator.notification.alert(
+    'An update for the application is available.',  // message
+    onConfirm_update,         // callback
+    'New update available!',            // title
+    'update'                  // buttonName
+);
+
+      //var ref = cordova.InAppBrowser.open('market://details?id=com.nhn.android.search', '_system', 'location=no');
+
+       
+
+      //alert("버전이 다릅니다. 업데이트 후 이용해주세요.");
+      return;
+      
+     } else {
+   
+start_web(app_token)
+
+     }
+    },
+    error: function(data){
+      var data = JSON.stringify(data);
+      console.log(data);
+      
+    }
+});
+}
+
 
     function start_web(token) {
   var app_token=token;
