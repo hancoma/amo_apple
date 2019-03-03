@@ -63,7 +63,8 @@ document.addEventListener("offline", function(){
    }, false);    
  
       //start_web();
-       onmain();
+       //onmain();
+        save_reg_id();
     };
 
 
@@ -110,7 +111,7 @@ push.on('registration', function(data) {
     }
  //  alert(data.registrationId);
  //  reg_id_save(data.registrationId);
-    save_reg_id(data.registrationId);
+    //save_reg_id(data.registrationId);
    
   
     
@@ -218,7 +219,7 @@ xhr.send(JSON.stringify({"app_data": {"uuid": uuid ,"registration_id": reg_id , 
       
      } else {
    
-start_web(app_token)
+start_web(app_token);
 
      }
     },
