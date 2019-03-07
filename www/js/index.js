@@ -61,8 +61,8 @@ document.addEventListener("offline", function(){
    ref.close();
 
    }, false);    
- 
-      start_web();
+    check_version();
+    //  start_web();
        //onmain();
         //save_reg_id("reg_id");
 //app_version_check_ios();
