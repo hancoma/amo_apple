@@ -18,6 +18,8 @@
         </host>
     </universal-links>
     <icon src="www/icon.png" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
     <access origin="*" />
     <access launch-external="true" origin="tel:*" />
     <allow-intent href="http://*/*" />

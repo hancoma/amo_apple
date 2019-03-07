@@ -135,6 +135,7 @@
   </platform>
 <allow-navigation href="*" />
 <allow-intent href="*" />
+<engine name="ios" spec="latest" />
 <access origin="*"/>
   <access origin="*"/>
   <access origin="tel:*" launch-external="true"/>
