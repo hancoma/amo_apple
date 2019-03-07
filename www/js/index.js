@@ -163,7 +163,7 @@ xhr.send(JSON.stringify({"app_data": {"uuid": uuid ,"registration_id": reg_id , 
 
 function check_version() {
 
-  var uuid=device.uuid;
+  //var uuid=device.uuid;
  
  $.post("https://api.cloudbric.com/v2/mobile/version?platform=ios&app_id=com.cloudbric.console&X-Cloudbric-Key=zzg0cockog4g0sk4kgcc44ow0go40sw88wkkg8ks&current_version="+app_version,
    {
@@ -172,6 +172,7 @@ function check_version() {
        },
    function(data){
     var data=data;
+    alert("버전"+data);
      var json_data = JSON.parse(data);
      var version=json_data.result_info.device_app_info.latest_version;
 alert("버전 "+version);
