@@ -19,8 +19,9 @@
     </universal-links>
     <icon src="www/icon.png" />
     <allow-navigation href="*" />
-    <allow-intent href="*" />
     <access origin="*" />
+    <access origin="content:///*" />
+    <allow-intent href="*" />
     <access launch-external="true" origin="tel:*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
