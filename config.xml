@@ -157,7 +157,8 @@
 <allow-intent href="*" />
 <engine name="ios" spec="latest" />
 <access origin="*"/>
-  <access origin="*"/>
+<access origin="content:///*" />
+<allow-intent href="*" />
   <access origin="tel:*" launch-external="true"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
