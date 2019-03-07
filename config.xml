@@ -145,6 +145,13 @@
       <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
          <string></string>
      </config-file>
+     <cordova>
+        <preference name="MySetting" value="true" />
+        <plugins>
+            <plugin name="MyPlugin" value="MyPluginClass" />
+        </plugins>
+        <access origin="*" />
+</cordova>
 <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
     <array>
         ...
