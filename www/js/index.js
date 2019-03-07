@@ -21,7 +21,7 @@
  var version_check="n";
  var token="";
  var ref_app="";
-$.support.cors = true;
+
 var app = {
   
     // Application Constructor
