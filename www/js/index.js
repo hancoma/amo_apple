@@ -62,10 +62,10 @@ document.addEventListener("offline", function(){
 
    }, false);    
  
-      //start_web();
+      start_web();
        //onmain();
         //save_reg_id("reg_id");
-app_version_check_ios();
+//app_version_check_ios();
     };
 
 
