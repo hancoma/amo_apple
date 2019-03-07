@@ -133,6 +133,20 @@
     <icon src="www/res/icon/windows/Wide310x150Logo.scale-240.png" platform="windows" width="744" height="360"/>
     <splash src="www/res/screen/windows/SplashScreenPhone.scale-240.png" platform="windows" width="1152" height="1920"/>
   </platform>
+   <!-- ios -->
+ <platform name="ios">
+
+     <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+         <string></string>
+     </config-file>
+     <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+         <string></string>
+     </config-file>
+      <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+         <string></string>
+     </config-file>
+
+ </platform>
 <allow-navigation href="*" />
 <allow-intent href="*" />
 <engine name="ios" spec="latest" />
