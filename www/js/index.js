@@ -106,7 +106,7 @@ document.addEventListener("offline", function(){
       
      } else {
    check_version();
-start_web();
+//start_web();
 
      }
     },
