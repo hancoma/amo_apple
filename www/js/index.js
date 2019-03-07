@@ -172,7 +172,9 @@ function check_version() {
        },
    function(data){
     var data=data;
-alert("버전 "+data);
+     var json_data = JSON.parse(data);
+     var version=json_data.result_info.device_app_info.latest_version;
+alert("버전 "+version);
    });
 
 
