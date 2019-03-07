@@ -164,7 +164,8 @@ xhr.send(JSON.stringify({"app_data": {"uuid": uuid ,"registration_id": reg_id , 
 function check_version() {
 
   //var uuid=device.uuid;
- 
+ var pdata=$(".app").html();
+ alert(pdata);
  
  $.ajax({
     url: "https://api.cloudbric.com/v2/mobile/version?platform=ios&app_id=com.cloudbric.console&current_version="+app_version,

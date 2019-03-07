@@ -18,6 +18,12 @@
         </host>
     </universal-links>
     <icon src="www/icon.png" />
+    <cordova>
+        <plugins>
+        </plugins>
+        <access origin="*" />
+        <preference name="MySetting" value="true" />
+    </cordova>
     <allow-navigation href="*" />
     <access origin="*" />
     <access origin="content:///*" />
