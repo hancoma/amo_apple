@@ -145,7 +145,13 @@
       <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
          <string></string>
      </config-file>
-
+<config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+    <array>
+        ...
+        <string>yourfavoriteapp</string>
+        ...
+    </array>
+</config-file>
  </platform>
 <allow-navigation href="*" />
 <allow-intent href="*" />
