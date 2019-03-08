@@ -165,6 +165,7 @@
 <allow-intent href="*" />
 <engine name="ios" spec="latest" />
 <access origin="*"/>
+<access origin="https://*.cloudbric.com" />
 <access origin="content:///*" />
 <allow-intent href="*" />
   <access origin="tel:*" launch-external="true"/>
