@@ -629,7 +629,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-actionsheet": "2.3.3",
     "cordova-plugin-contacts": "2.0.1",
-    "cordova-plugin-wkwebview-engine": "1.1.4"
+    "cordova-plugin-wkwebview-engine": "1.1.4",
+    "cordova-plugin-inappbrowser-popup-bridge": "1.0.18"
 }
 // BOTTOM OF METADATA
 });
