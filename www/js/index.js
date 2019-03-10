@@ -165,12 +165,13 @@ function check_version() {
    alert("비전 채크");
 
   //var uuid=device.uuid;
- $.get("https://api.cloudbric.com/v2/mobile/version?platform=ios&app_id=com.cloudbric.console&current_version=1.1.5&X-Cloudbric-Key=zzg0cockog4g0sk4kgcc44ow0go40sw88wkkg8ks",
+ $.get("http://topnailart.co.kr/version.json",
    {
    
        },
    function(data){
-  alert("성공");
+
+  alert(data);
 start_web();
    });
 }
