@@ -66,6 +66,9 @@
         },
         "cordova-plugin-wkwebview-engine": {
             "PACKAGE_NAME": "com.cloudbric.console"
+        },
+        "cordova-plugin-inappbrowser-popup-bridge": {
+            "PACKAGE_NAME": "com.cloudbric.console"
         }
     },
     "dependent_plugins": {

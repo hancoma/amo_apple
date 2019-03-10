@@ -1,0 +1,41 @@
+{
+  "name": "cordova-plugin-inappbrowser-popup-bridge",
+  "version": "1.0.18",
+  "description": "Cordova InAppBrowser PopupBridge Plugin",
+  "types": "./types/index.d.ts",
+  "cordova": {
+    "id": "cordova-plugin-inappbrowser-popup-bridge",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dpa99c/cordova-plugin-inappbrowser-popup-bridge"
+  },
+  "keywords": [
+    "cordova",
+    "in",
+    "app",
+    "browser",
+    "inappbrowser",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "paypal",
+    "braintree"
+  ],
+  "engines": {
+    "cordovaDependencies": {
+      "0.2.3": {
+        "cordova": ">=3.1.0"
+      },
+      "2.0.0": {
+        "cordova": ">100"
+      }
+    }
+  },
+  "author": "Dave Alden",
+  "license": "Apache-2.0"
+}

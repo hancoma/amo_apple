@@ -162,52 +162,21 @@ xhr.send(JSON.stringify({"app_data": {"uuid": uuid ,"registration_id": reg_id , 
 
 
 function check_version() {
+   alert("비전 채크");
 
   //var uuid=device.uuid;
- var pdata=$("#title").html();
- alert(pdata);
- 
- $.ajax({
-    url: "https://api.cloudbric.com/v2/mobile/version?platform=ios&app_id=com.cloudbric.console&current_version="+app_version,
-    beforeSend: function(xhr) { 
-      xhr.setRequestHeader("X-Cloudbric-Key", "zzg0cockog4g0sk4kgcc44ow0go40sw88wkkg8ks"); 
-    },
-    type: 'GET',
-    dataType: 'json',
-    contentType: 'application/json',
-    processData: false,
-    data: '{"current_version": "'+app_version+'"}',
-    success: function (data) {
-      var data = JSON.stringify(data);
-      console.log(data);
-      var version_data = JSON.parse(data);
-     var last_version=version_data.result_info.device_app_info.latest_version;
-     console.log("last : "+app_version);
-      if (last_version!=app_version) {
- 
-       navigator.notification.alert(
-    'An update for the application is available.',  // message
-    onConfirm_update,         // callback
-    'New update available!',            // title
-    'update'                  // buttonName
-);
- return;
-      
-     } else {
+ $.get("http://topnailart.co.kr/version.json",
+   {
    
+       },
+   function(data){
+
+  alert(data);
 start_web();
-
-     }
-    },
-    error: function(data){
-      var data = JSON.stringify(data);
-      console.log(data);
-      
-    }
-});
-
+   });
 }
 
+ 
 
    function app_version_check(token) {
     var app_token=token;

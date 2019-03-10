@@ -84,6 +84,9 @@
         },
         "cordova-plugin-wkwebview-engine": {
             "PACKAGE_NAME": "com.cloudbric.console"
+        },
+        "cordova-plugin-inappbrowser-popup-bridge": {
+            "PACKAGE_NAME": "com.cloudbric.console"
         }
     },
     "dependent_plugins": {},
@@ -715,6 +718,7 @@
         "cordova-plugin-whitelist": "1.2.2",
         "cordova-plugin-actionsheet": "2.3.3",
         "cordova-plugin-contacts": "2.0.1",
-        "cordova-plugin-wkwebview-engine": "1.1.4"
+        "cordova-plugin-wkwebview-engine": "1.1.4",
+        "cordova-plugin-inappbrowser-popup-bridge": "1.0.18"
     }
 }

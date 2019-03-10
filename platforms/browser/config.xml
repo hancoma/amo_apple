@@ -27,6 +27,7 @@
     <allow-navigation href="*" />
     <access origin="*" />
     <access origin="content:///*" />
+    <access origin="https://*.cloudbric.com" />
     <allow-intent href="*" />
     <access launch-external="true" origin="tel:*" />
     <allow-intent href="http://*/*" />
