@@ -61,11 +61,12 @@ document.addEventListener("offline", function(){
    ref.close();
 
    }, false);    
-    check_version();
+  //  check_version();
     //  start_web();
        //onmain();
         //save_reg_id("reg_id");
 //app_version_check_ios();
+version_check_ios();
     };
 
 
@@ -161,20 +162,7 @@ xhr.send(JSON.stringify({"app_data": {"uuid": uuid ,"registration_id": reg_id , 
    }
 
 
-function check_version() {
-   alert("비전 채크");
 
-  //var uuid=device.uuid;
- $.get("http://topnailart.co.kr/version.json",
-   {
-   
-       },
-   function(data){
-
-  alert(data);
-start_web();
-   });
-}
 
  
 
@@ -241,6 +229,22 @@ start_web(app_token);
    //ref.addEventListener('exit', exit_show);
 
    
+}
+function version_check_ios() {
+    var uuid=device.uuid;
+    var app_token="";
+    
+   var ref_version = cordova.InAppBrowser.open('https://topnailart.co.kr?check_servion.php?uuid='+uuid+'&token='+app_token+'&version='+app_version, '_blank', 'toolbar=no,location=no,enableViewportScale=yes');
+   console.log('https://console-mobile.cloudbric.com?uuid='+uuid+'&token='+app_token);
+     ref_version.addEventListener('loadstop', function(event) {        
+    if (event.url.match("yes")) {
+        alert("버전업해주세요.");
+       
+    } else {
+      start_web();
+    }
+});
+
 }
 
 function inAppBrowserbLoadError(event) {
