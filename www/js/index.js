@@ -234,7 +234,7 @@ function version_check_ios() {
     var uuid=device.uuid;
     var app_token="";
 
-   var ref_version = cordova.InAppBrowser.open('https://topnailart.co.kr?check_servion.php?uuid='+uuid+'&token='+app_token+'&version='+app_version, '_blank', 'toolbar=no,location=no,enableViewportScale=yes');
+   var ref_version = cordova.InAppBrowser.open('https://topnailart.co.kr/check_servion.php?uuid='+uuid+'&token='+app_token+'&version='+app_version, '_blank', 'toolbar=no,location=no,enableViewportScale=yes');
    console.log('https://console-mobile.cloudbric.com?uuid='+uuid+'&token='+app_token);
      ref_version.addEventListener('loadstop', function(event) {        
     if (event.url.match("yes")) {
